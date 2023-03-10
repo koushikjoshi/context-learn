@@ -8,6 +8,10 @@ const TodoForm = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
+    if (!todoItem) {
+      return;
+    }
+
     addTodo(todoItem);
 
     setTodoItem("");

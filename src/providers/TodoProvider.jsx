@@ -14,10 +14,16 @@ const TodoProvider = ({ children }) => {
     setTodoList([...todoList, newTodoItem]);
   };
 
+  const removeTodo = (todoIndex) => {
+    const newList = todoList.filter((_, index) => index !== todoIndex);
+    setTodoList(newList);
+  };
+
   const contextValue = {
     todoList,
     getNumberOfTodoItems,
     addTodo,
+    removeTodo,
   };
 
   return (
